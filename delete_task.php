@@ -6,11 +6,8 @@ if(isset($_POST['delete'])){
     $id = $_POST['id'];
     
     // Fetch task details for confirmation dialog
-    $query = "SELECT * FROM `tasks` WHERE `id` = ?";
-    $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, "i", $id);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
+    $query = "SELECT * FROM `tasks` WHERE `id` = '$id'";
+    $result = mysqli_query($con, $query);
     $task = mysqli_fetch_assoc($result);
 
     if (!$task) {
