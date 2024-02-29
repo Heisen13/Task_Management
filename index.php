@@ -13,7 +13,7 @@ include ("config.php");
   <body>
 <style>
   .card-title {
-            color: #007bff;
+            color: black;
             margin-bottom: 20px;
         }
 </style>
@@ -23,10 +23,11 @@ include ("config.php");
         <div class="col-lg-12">
 
           <div class="card">
+            <h3 class="card-title mt-4 m-4">Task Management System</h3>
           <div class="card-body text-center">
-            <h3 class="card-title">Task Management System</h3>
+            
 
-              <a href="create_task.php" style="float: right;" class="btn btn-primary">Add new Task</a>
+              <a href="create_task.php" style="float: right;" class="btn btn-success mb-4">Add new Task</a>
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
@@ -39,7 +40,6 @@ include ("config.php");
                   </tr>
                 </thead>
                 <tbody>
-
 
                 <?php
                 $query = "SELECT * FROM `tasks`";
@@ -58,16 +58,15 @@ include ("config.php");
 
                 <td>
 
-                <a href="view_tasks.php?id=<?= $row['id']; ?>" class="btn btn-outline-primary">VIEW</a>
+                <a href="view_tasks.php?id=<?= $row['id']; ?>" class="btn btn-primary">VIEW</a>
                 <form action="edit_task.php" method="POST" class="d-inline">
                   <input type="hidden" name="id" value="<?= $row['id']; ?>">
-                  <button type="submit" class="btn btn-outline-warning" name="update">UPDATE</button>
+                  <button type="submit" class="btn btn-warning" name="update">UPDATE</button>
               </form>
               <form action="delete_task.php" method="POST" class="d-inline">
                 <input type="hidden" name="id" value="<?= $row['id']; ?>">
-                  <button type="submit" name="delete" class="btn btn-outline-danger">DELETE</button>
+                  <button type="submit" name="delete" class="btn btn-danger">DELETE</button>
               </form>
-
 
               </td>
                     </tr>
@@ -95,8 +94,6 @@ include ("config.php");
       </div>
     </section>
  </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
